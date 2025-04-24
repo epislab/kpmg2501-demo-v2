@@ -30,7 +30,7 @@ class TitanicService:
 
     def new_model(self, fname) -> object:
         this = self.data_schema
-        this.context = 'C:\\Users\\pakjk\\Documents\\titanic250207\\com\\epislab\\datas\\titanic\\'
+        this.context = 'C:\\Users\\pakjk\\Documents\\2025\\kpmg2501\\demo2501\\v2\\ai-server\\titanic-service\\app\\stored_data\\'
         this.fname = fname
         return pd.read_csv(this.context + this.fname)
     
