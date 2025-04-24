@@ -1,4 +1,3 @@
-
 import pandas as pd
 import numpy as np
 
@@ -60,6 +59,8 @@ class TitanicService:
         this = self.pclass_ordinal(this)
         this = self.fare_ratio(this)
         this = self.drop_feature(this, "Fare")
+
+        TitanicService.print_this(this)
        
         return this
     
@@ -98,7 +99,7 @@ class TitanicService:
         # for i in [this.train, this.test]:
         #     i['Title'] = i['Name'].str.extract('([A-Za-z]+)\.', expand=False) 
 
-        [i.__setitem__('Title', i['Name'].str.extract('([A-Za-z]+)\.', expand=False)) 
+        [i.__setitem__('Title', i['Name'].str.extract(r'([A-Za-z]+)\.', expand=False)) 
          for i in [this.train, this.test]]
             # expand=False 는 시리즈 로 추출
         return this
